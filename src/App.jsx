@@ -5,10 +5,12 @@
  */
 
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
 
 import About from "./Components/About";
 import Footer from "./Components/Footer";
-import Header from "./Components/Header";
+import Header from "./Components/Navbar";
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 
@@ -40,13 +42,15 @@ const secondaryColor = "#D2F1E4";
 
 const App = () => {
   return (
-    <div id="main">
-      <Header />
-      <Home name={siteProps.name} title={siteProps.title} />
-      <About />
-      <Portfolio />
-      <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-    </div>
+    <BrowserRouter>
+      <div id="main">
+        <Header />
+        <Home name={siteProps.name} title={siteProps.title} />
+        <About />
+        <Portfolio />
+        <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+      </div>
+    </BrowserRouter>
   );
 };
 

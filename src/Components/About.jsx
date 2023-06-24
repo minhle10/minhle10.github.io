@@ -24,7 +24,7 @@ const imageAltText = "purple and blue abstract background";
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "I'm a recent graduate from Boston College. I enjoy creating unique and simple solutions to real world problems through programming.";
+  "I'm a recent graduate from Boston College with a Bachelors in Computer Science. I enjoy creating unique and simple solutions to real world problems through programming.";
 
 /**
  * List of some of skills or technologies you work on, are learning,

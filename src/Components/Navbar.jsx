@@ -6,9 +6,9 @@
  */
 import React from "react";
 
-const Header = () => {
+const Navbar = () => {
   return (
-    <div
+    <nav
       style={{
         position: "fixed",
         display: "flex",
@@ -25,8 +25,8 @@ const Header = () => {
       <a href="#about">About</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#footer">Contact</a>
-    </div>
+    </nav>
   );
 };
 
-export default Header;
+export default Navbar;
