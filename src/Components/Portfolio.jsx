@@ -9,6 +9,8 @@
  */
 
 import React from "react";
+import { motion } from "framer-motion";
+import projectImg from "./../images/example-project.jpg"
 
 /**
  * Desk image
@@ -19,10 +21,9 @@ import React from "react";
  * Need an image? Check out https://unsplash.com to download a photo you
  * freely use on your site.
  */
-import image from "../images/design-desk.jpeg";
+import image from "../images/motion-background.jpg";
 
-const imageAltText = "desktop with books and laptop";
-
+const imageAltText = "purple and blue abstract background";
 /**
  * Project list
  *
@@ -59,24 +60,52 @@ const projectList = [
 const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
+      <img className="background" src={image} alt={imageAltText} />
       <h2 style={{ textAlign: "center" }}>Portfolio</h2>
       <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
-            alt={imageAltText}
-          />
-        </div>
         <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
-            </div>
-          ))}
+          {projectList.map((project) => {
+            return (
+              <div
+                key={project.title}
+                style={{
+                  background: "#d6ebff",
+                  position: "relative",
+                  borderRadius: "0.8rem",
+                  overflow: "hidden",
+                }}
+              >
+                <motion.div
+                  style={{
+                    position: "relative",
+                    bottom: -10,
+                    padding: "50px 10px 0px",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <motion.img
+                    src={projectImg}
+                    alt="example project"
+                    initial={{ "--rotate": "0deg" }}
+                    whileHover={{ scale: 1.05, rotate: "2deg" }}
+                    style={{
+                      overflowClipMargin: "content-box",
+                      overflow: "clip",
+                      objecFit: "cover",
+                      width: "85%",
+                      borderTopRightRadius: "0.4rem",
+                      borderTopLeftRadius: "0.4rem",
+                      margin: "auto",
+                    }}
+                  />
+                </motion.div>
+                {/* <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  Link
+                </a> */}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
