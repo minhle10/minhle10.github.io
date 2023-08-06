@@ -8,6 +8,7 @@
 import React from "react";
 import arrowSvg from "../images/down-arrow.svg";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 /**
  * Home background image
@@ -40,12 +41,20 @@ const Home = ({ name, title }) => {
         <h1>{name}</h1>
         <h2>{title}</h2>
       </div>
-      <div style={{ position: "absolute", bottom: "3rem", left: "50%" }}>
+      <motion.div
+        animate={{
+          y: [0, 5, 0],
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+        style={{ position: "absolute", bottom: "3rem", left: "50%" }}>
         <a href="#about">
           <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
         </a>
-
-      </div>
+      </motion.div>
     </section>
   );
 };
