@@ -20,22 +20,18 @@ import tailwind from "../images/tailwind.png";
 import ts from "../images/ts.png";
 import supabase from "../images/supabase.png";
 
-
 import React from "react";
 
 /**
  * About background image
  *
  * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
+ * directory and import here for use. Then, set imageAltText to string that
  * represents what you see in that image.
  *
  * Need an image? Check out https://unsplash.com to download a image you
  * freely use on your site.
  */
-import image from "../images/ocean-background.jpg";
-
-const imageAltText = "ocean";
 
 /**
  * Sort description that expands on your title on the Home component.
@@ -71,12 +67,18 @@ const skillsList = [
  * how you best work, or even a quote. This will help someone learn more
  * about you on a professional level.
  */
-const detailOrQuote =
-  <p>I believe in the power of <span style={{fontWeight: 500}}>continuous learning</span> and <span style={{fontWeight: 500}}>adaptability</span> in an industry that thrives on innovation. Whether it's mastering a new programming language, exploring emerging technologies, or tackling complex coding puzzles, I'm always ready to expand my skill set. </p>;
+const detailOrQuote = (
+  <p>
+    I believe in the power of <span style={{ fontWeight: 500 }}>continuous learning</span> and{" "}
+    <span style={{ fontWeight: 500 }}>adaptability</span> in an industry that thrives on innovation.
+    Whether it`&apos;`s mastering a new programming language, exploring emerging technologies, or
+    tackling complex coding puzzles, I`&apos;`m always ready to expand my skill set.{" "}
+  </p>
+);
 
 const About = () => {
   return (
-    <section className="padding" id="about" style={{backgroundColor: "#e0e0ff"}}>
+    <section className="padding" id="about" style={{ backgroundColor: "#e0e0ff" }}>
       {/* <img className="background" src={image} alt={imageAltText} /> */}
       <div
         style={{
@@ -88,10 +90,10 @@ const About = () => {
         <h2>About Me</h2>
         <p className="medium">{description}</p>
         <hr />
-        <h3 style={{ textAlign: "center" }}>Technologies I've Worked With:</h3>
+        <h3 style={{ textAlign: "center" }}>Technologies I`&apos;`ve Worked With:</h3>
         <div className="tech">
           {skillsList.map((skill) => (
-            <img alt={skill} style={{ width: '2.5em' }} key={skill} src={skill} />
+            <img alt={skill} style={{ width: "2.5em" }} key={skill} src={skill} />
           ))}
         </div>
         <hr />
