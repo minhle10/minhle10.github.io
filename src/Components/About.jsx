@@ -97,7 +97,7 @@ const About = () => (
         {description}
       </motion.p>
       <hr />
-      <h3 style={{ textAlign: "center" }}>Technologies I&apos;ve Worked With:</h3>
+      <motion.h3 variants={fadeIn("", "", 0.1, 1)} style={{ textAlign: "center" }}>Technologies I&apos;ve Worked With:</motion.h3>
       <div className="tech">
         {skillsList.map((skill, index) => (
           <motion.div
@@ -106,7 +106,7 @@ const About = () => (
               transition: { duration: 1.2 },
               rotate: [0, 0, -45, 45, 0],
             }}
-            variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+            variants={fadeIn("right", "spring", 0.25 * index, 0.75)}
             key={index}
           >
             <img alt={skill} style={{ width: "2.5em" }} src={skill} />
