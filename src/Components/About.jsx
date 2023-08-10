@@ -90,13 +90,7 @@ const About = () => {
           textAlign: "center",
         }}
       >
-        <motion.div
-          animate={{
-            scale: [1, 1.05, 1, 1.05, 1],
-            transition: { duration: 2, repeat: Infinity },
-          }}
-          variants={textVariant()}
-        >
+        <motion.div variants={textVariant()}>
           <h2>About Me</h2>
         </motion.div>
         <motion.p variants={fadeIn("", "", 0.1, 1)} className="medium">
@@ -109,7 +103,7 @@ const About = () => {
             <motion.div
               whileHover={{
                 scale: [1, 1, 1.2, 1.2, 1],
-                transition: { duration: 1 },
+                transition: { duration: 1.2 },
                 rotate: [0, 0, -45, 45, 0],
               }}
               variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
@@ -120,7 +114,7 @@ const About = () => {
           ))}
         </div>
         <hr />
-        <p>{detailOrQuote}</p>
+        <motion.p variants={fadeIn("", "", 0.1, 1)}>{detailOrQuote}</motion.p>
       </div>
     </section>
   );
