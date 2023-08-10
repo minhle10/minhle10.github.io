@@ -58,6 +58,9 @@ section img.background {
   width: 100vmax;
   z-index: -1;
 }
+section#id {
+  background-color: #e3e7e7;
+}
 
 h1 {
   font-family: "Cormorant Garamond", serif;

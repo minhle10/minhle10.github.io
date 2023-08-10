@@ -66,3 +66,22 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
     },
   };
 };
+
+export const fadeUp = {
+  offscreen: {
+    x: 0,
+    y: 100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      delay: 0.1,
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};

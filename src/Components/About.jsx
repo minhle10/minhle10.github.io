@@ -23,7 +23,7 @@ import supabase from "../images/supabase.png";
 import React from "react";
 import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant, fadeUp } from "../utils/motion";
 
 /**
  * About background image
@@ -79,45 +79,46 @@ const detailOrQuote = (
   </p>
 );
 
-const About = () => {
-  return (
-    <section className="padding" id="about" style={{ backgroundColor: "#e0e0ff" }}>
-      {/* <img className="background" src={image} alt={imageAltText} /> */}
-      <div
-        style={{
-          width: "80%",
-          margin: "3rem auto",
-          textAlign: "center",
-        }}
-      >
-        <motion.div variants={textVariant()}>
-          <h2>About Me</h2>
-        </motion.div>
-        <motion.p variants={fadeIn("", "", 0.1, 1)} className="medium">
-          {description}
-        </motion.p>
-        <hr />
-        <h3 style={{ textAlign: "center" }}>Technologies I&apos;ve Worked With:</h3>
-        <div className="tech">
-          {skillsList.map((skill, index) => (
-            <motion.div
-              whileHover={{
-                scale: [1, 1, 1.2, 1.2, 1],
-                transition: { duration: 1.2 },
-                rotate: [0, 0, -45, 45, 0],
-              }}
-              variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-              key={index}
-            >
-              <img alt={skill} style={{ width: "2.5em" }} src={skill} />
-            </motion.div>
-          ))}
-        </div>
-        <hr />
-        <motion.p variants={fadeIn("", "", 0.1, 1)}>{detailOrQuote}</motion.p>
+const About = () => (
+  <section id="about" style={{ backgroundColor: "#e3e7e7" }}>
+    <div
+      style={{
+        width: "80%",
+        padding: "3rem 0",
+        margin: "0 auto",
+        textAlign: "center",
+        backgroundColor: "#fff",
+      }}
+    >
+      <motion.div variants={textVariant()}>
+        <h2>About Me</h2>
+      </motion.div>
+      <motion.p variants={fadeIn("", "", 0.1, 1)} className="medium">
+        {description}
+      </motion.p>
+      <hr />
+      <h3 style={{ textAlign: "center" }}>Technologies I&apos;ve Worked With:</h3>
+      <div className="tech">
+        {skillsList.map((skill, index) => (
+          <motion.div
+            whileHover={{
+              scale: [1, 1, 1.2, 1.2, 1],
+              transition: { duration: 1.2 },
+              rotate: [0, 0, -45, 45, 0],
+            }}
+            variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+            key={index}
+          >
+            <img alt={skill} style={{ width: "2.5em" }} src={skill} />
+          </motion.div>
+        ))}
       </div>
-    </section>
-  );
-};
+      <hr />
+      <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}>
+        <motion.div variants={fadeUp}>{detailOrQuote}</motion.div>
+      </motion.div>
+    </div>
+  </section>
+);
 
 export default SectionWrapper(About);
