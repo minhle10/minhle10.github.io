@@ -36,12 +36,12 @@ section.padding {
 
 section img.background {
   height: 100%;
-  left: 50%;
+  right: 0;
   object-fit: cover;
   pointer-events: none;
   position: absolute;
   top: 0;
-  transform: translate(-50%, 0);
+  /* transform: translate(20%, 0); */
   width: 100vmax;
   z-index: -1;
 }
