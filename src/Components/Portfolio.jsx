@@ -10,7 +10,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import projectImg from "./../images/example-project.jpg"
+import projectImg from "./../images/example-project.jpg";
+import ethgpt from "./../images/ethgpt.png";
+import harikablog from "./../images/harikablog.png";
+import gardwebapp from "./../images/gardwebapp.png";
 
 /**
  * Desk image
@@ -32,28 +35,35 @@ const imageAltText = "purple and blue abstract background";
  */
 const projectList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
+    title: "Eth-GPT",
     description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+      "Created a web application that injects data into Chat-GPT using vector embeddings and cosine similiarity to generate reliable responses to Ethereum specific questions.",
+    src: ethgpt,
+    url: "https://eth-gpt-rho.vercel.app/",
+    tags: [],
   },
   {
-    title: "Web Development for Beginners",
+    title: "Harika Blog",
     description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+      "Built a dynamic blog application in which users can upload complex read, write, and update complex files and rich-text.",
+    src: harikablog,
+    url: "https://nameless-lake-28361.herokuapp.com/",
+    tags: [],
   },
   {
-    title: "My Resume Site",
+    title: "Gard Web App",
     description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+      "Helped to integrate a robust database system on the backend and contributed to translating various UX/UI designs to clean front-end code using best practices.",
+    src: gardwebapp,
+    url: "https://gard.money/",
+    tags: [],
   },
   {
-    title: "GitHub Codespaces and github.dev",
-    description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+    title: "Crypto Bites Landing Page",
+    description: "Designed and implemented the landing page for Crypto Bites App, our iOS app.",
+    src: projectImg,
+    url: "https://cbites.co/",
+    tags: [],
   },
 ];
 
@@ -66,44 +76,59 @@ const Portfolio = () => {
         <div className="container">
           {projectList.map((project) => {
             return (
-              <div
-                key={project.title}
-                style={{
-                  background: "#d6ebff",
-                  position: "relative",
-                  borderRadius: "0.8rem",
-                  overflow: "hidden",
-                  height: "auto",
-                }}
-              >
-                <motion.div
+              <div key={project.title}>
+                <div
                   style={{
+                    background: "#d6ebff",
                     position: "relative",
-                    bottom: -10,
-                    padding: "1em 1em 0px",
-                    display: "flex",
-                    justifyContent: "center",
+                    borderTopRightRadius: "0.8rem",
+                    borderTopLeftRadius: "0.8rem",
+                    overflow: "hidden",
+                    height: "auto",
                   }}
                 >
-                  <motion.img
-                    src={projectImg}
-                    alt="example project"
-                    initial={{ "--rotate": "0deg" }}
-                    whileHover={{ scale: 1.05, rotate: "2deg" }}
+                  <motion.div
                     style={{
-                      overflowClipMargin: "content-box",
-                      overflow: "clip",
-                      objecFit: "cover",
-                      width: "85%",
-                      borderTopRightRadius: "0.4rem",
-                      borderTopLeftRadius: "0.4rem",
-                      margin: "auto",
+                      position: "relative",
+                      bottom: -10,
+                      padding: "1em 1em 0px",
+                      display: "flex",
+                      justifyContent: "center",
                     }}
-                  />
-                </motion.div>
-                {/* <a href={project.url} target="_blank" rel="noopener noreferrer">
-                  Link
-                </a> */}
+                  >
+                    <motion.img
+                      src={project.src}
+                      alt="example project"
+                      initial={{ "--rotate": "0deg" }}
+                      whileHover={{ scale: 1.05, rotate: "2deg" }}
+                      style={{
+                        overflowClipMargin: "content-box",
+                        overflow: "clip",
+                        objecFit: "cover",
+                        aspectRatio: "13 / 9",
+                        width: "85%",
+                        borderTopRightRadius: "0.4rem",
+                        borderTopLeftRadius: "0.4rem",
+                        margin: "auto",
+                      }}
+                    />
+                  </motion.div>
+                  {/* <a href={project.url} target="_blank" rel="noopener noreferrer">
+                    Link
+                  </a> */}
+                </div>
+                <div
+                  style={{
+                    backgroundColor: "#dae7ff",
+                    borderBottomRightRadius: "0.8rem",
+                    borderBottomLeftRadius: "0.8rem",
+                    padding: "2em",
+                    height: "auto",
+                    boxShadow: "inset 0px 3px 3px rgba(50, 50, 50, 0.75)",
+                  }}
+                >
+                  {project.description}
+                </div>
               </div>
             );
           })}
