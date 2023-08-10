@@ -73,13 +73,14 @@ const Portfolio = () => {
                   position: "relative",
                   borderRadius: "0.8rem",
                   overflow: "hidden",
+                  height: "auto",
                 }}
               >
                 <motion.div
                   style={{
                     position: "relative",
                     bottom: -10,
-                    padding: "50px 10px 0px",
+                    padding: "1em 1em 0px",
                     display: "flex",
                     justifyContent: "center",
                   }}

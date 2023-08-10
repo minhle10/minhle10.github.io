@@ -21,6 +21,9 @@ import ts from "../images/ts.png";
 import supabase from "../images/supabase.png";
 
 import React from "react";
+import { SectionWrapper } from "../hoc";
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../utils/motion";
 
 /**
  * About background image
@@ -71,8 +74,8 @@ const detailOrQuote = (
   <p>
     I believe in the power of <span style={{ fontWeight: 500 }}>continuous learning</span> and{" "}
     <span style={{ fontWeight: 500 }}>adaptability</span> in an industry that thrives on innovation.
-    Whether it`&apos;`s mastering a new programming language, exploring emerging technologies, or
-    tackling complex coding puzzles, I`&apos;`m always ready to expand my skill set.{" "}
+    Whether it&apos;s mastering a new programming language, exploring emerging technologies, or
+    tackling complex coding puzzles, I&apos;m always ready to expand my skill set.{" "}
   </p>
 );
 
@@ -87,13 +90,33 @@ const About = () => {
           textAlign: "center",
         }}
       >
-        <h2>About Me</h2>
-        <p className="medium">{description}</p>
+        <motion.div
+          animate={{
+            scale: [1, 1.05, 1, 1.05, 1],
+            transition: { duration: 2, repeat: Infinity },
+          }}
+          variants={textVariant()}
+        >
+          <h2>About Me</h2>
+        </motion.div>
+        <motion.p variants={fadeIn("", "", 0.1, 1)} className="medium">
+          {description}
+        </motion.p>
         <hr />
-        <h3 style={{ textAlign: "center" }}>Technologies I`&apos;`ve Worked With:</h3>
+        <h3 style={{ textAlign: "center" }}>Technologies I&apos;ve Worked With:</h3>
         <div className="tech">
-          {skillsList.map((skill) => (
-            <img alt={skill} style={{ width: "2.5em" }} key={skill} src={skill} />
+          {skillsList.map((skill, index) => (
+            <motion.div
+              whileHover={{
+                scale: [1, 1, 1.2, 1.2, 1],
+                transition: { duration: 1 },
+                rotate: [0, 0, -45, 45, 0],
+              }}
+              variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+              key={index}
+            >
+              <img alt={skill} style={{ width: "2.5em" }} src={skill} />
+            </motion.div>
           ))}
         </div>
         <hr />
@@ -103,4 +126,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default SectionWrapper(About);
