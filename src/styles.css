@@ -20,6 +20,20 @@ div#main {
   flex-direction: column;
   width: 100vw;
 }
+div.tech {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-size: 1.25rem;
+  margin: 2rem 3rem;
+  gap: 2.5rem;
+}
+@media screen and (max-width: 480px) {
+  div.tech {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 section {
   position: relative;
@@ -41,7 +55,6 @@ section img.background {
   pointer-events: none;
   position: absolute;
   top: 0;
-  /* transform: translate(20%, 0); */
   width: 100vmax;
   z-index: -1;
 }
@@ -76,6 +89,10 @@ p {
 
 p.large {
   font-size: 24px;
+}
+
+p.medium {
+  font-size: 19px;
 }
 
 p.small {

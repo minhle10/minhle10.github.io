@@ -3,6 +3,23 @@
  *
  * Space for you to describe more about yourself.
  */
+import aws from "../images/aws.png";
+import html from "../images/html.png";
+import java from "../images/java.png";
+import heroku from "../images/heroku.png";
+import python from "../images/python.png";
+import rails from "../images/rails.png";
+import react from "../images/react.png";
+import openai from "../images/openai.png";
+import firebase from "../images/firebase.png";
+import postgres from "../images/postgres.png";
+import figma from "../images/figma.png";
+import git from "../images/git.png";
+import vercel from "../images/vercel.png";
+import tailwind from "../images/tailwind.png";
+import ts from "../images/ts.png";
+import supabase from "../images/supabase.png";
+
 
 import React from "react";
 
@@ -24,13 +41,30 @@ const imageAltText = "ocean";
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "I'm a recent graduate from Boston College with a Bachelors in Computer Science. I enjoy creating unique and simple solutions to real world problems through programming.";
+  "Hello there! I'm Minh, a passionate and driven recent graduate from Boston College with a strong foundation in web development. With an insatiable curiosity for technology and a keen eye for innovation, I'm on a mission to transform intricate lines of code into meaningful and impactful solutions.";
 
 /**
  * List of some of skills or technologies you work on, are learning,
  * passionate about, or enjoy,
  */
-const skillsList = ["React", "Figma", "Ruby on Rails", "AWS", "Heroku", "OpenAI"];
+const skillsList = [
+  python,
+  react,
+  html,
+  tailwind,
+  java,
+  aws,
+  heroku,
+  rails,
+  openai,
+  firebase,
+  postgres,
+  figma,
+  git,
+  ts,
+  vercel,
+  supabase,
+];
 
 /**
  * Use this to give more information about what you are passionate about,
@@ -38,39 +72,30 @@ const skillsList = ["React", "Figma", "Ruby on Rails", "AWS", "Heroku", "OpenAI"
  * about you on a professional level.
  */
 const detailOrQuote =
-  "I am passionate about solving problems in new creative ways to drive innovation. By leveraging my programming skills I continually look for new and better ways to innovate.";
+  "I believe in the power of continuous learning and adaptability in an industry that thrives on innovation. Whether it's mastering a new programming language, exploring emerging technologies, or tackling complex coding puzzles, I'm always ready to expand my skill set. ";
 
 const About = () => {
   return (
-    <section className="padding" id="about">
-      <img className="background" src={image} alt={imageAltText} />
+    <section className="padding" id="about" style={{backgroundColor: "#e0e0ff"}}>
+      {/* <img className="background" src={image} alt={imageAltText} /> */}
       <div
         style={{
-          backgroundColor: "white",
-          width: "50%",
-          padding: "4rem",
+          width: "80%",
           margin: "3rem auto",
           textAlign: "center",
         }}
       >
-        <h2>About Myself</h2>
-        <p className="large">{description}</p>
+        <h2>About Me</h2>
+        <p className="medium">{description}</p>
         <hr />
-        <ul
-          style={{
-            textAlign: "left",
-            columns: 2,
-            fontSize: "1.25rem",
-            margin: "2rem 3rem",
-            gap: "3rem",
-          }}
-        >
+        <h3 style={{ textAlign: "center" }}>Technologies I've Worked With:</h3>
+        <div className="tech">
           {skillsList.map((skill) => (
-            <li key={skill}>{skill}</li>
+            <img alt={skill} style={{ width: '2.5em' }} key={skill} src={skill} />
           ))}
-        </ul>
+        </div>
         <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+        <p>{detailOrQuote}</p>
       </div>
     </section>
   );
