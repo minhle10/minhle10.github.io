@@ -14,6 +14,7 @@ import projectImg from "./../images/example-project.jpg";
 import ethgpt from "./../images/ethgpt.png";
 import harikablog from "./../images/harikablog.png";
 import gardwebapp from "./../images/gardwebapp.png";
+import { fadeIn } from "../utils/motion";
 
 /**
  * Desk image
@@ -25,6 +26,7 @@ import gardwebapp from "./../images/gardwebapp.png";
  * freely use on your site.
  */
 import image from "../images/motion-background.jpg";
+import { SectionWrapper } from "../hoc";
 
 const imageAltText = "purple and blue abstract background";
 /**
@@ -71,12 +73,14 @@ const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
       <img className="background" src={image} alt={imageAltText} />
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
+      <motion.h2 variants={fadeIn("", "", 0.1, 1)} style={{ textAlign: "center" }}>
+        Portfolio
+      </motion.h2>
       <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
         <div className="container">
-          {projectList.map((project) => {
+          {projectList.map((project, index) => {
             return (
-              <div key={project.title}>
+              <motion.div variants={fadeIn("right", "spring", 0.5 * index, 0.75)} key={index}>
                 <div
                   style={{
                     background: "#d6ebff",
@@ -129,7 +133,7 @@ const Portfolio = () => {
                 >
                   {project.description}
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -138,4 +142,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default SectionWrapper(Portfolio);
