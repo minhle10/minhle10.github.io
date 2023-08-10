@@ -72,7 +72,7 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "I believe in the power of continuous learning and adaptability in an industry that thrives on innovation. Whether it's mastering a new programming language, exploring emerging technologies, or tackling complex coding puzzles, I'm always ready to expand my skill set. ";
+  <p>I believe in the power of <span style={{fontWeight: 500}}>continuous learning</span> and <span style={{fontWeight: 500}}>adaptability</span> in an industry that thrives on innovation. Whether it's mastering a new programming language, exploring emerging technologies, or tackling complex coding puzzles, I'm always ready to expand my skill set. </p>;
 
 const About = () => {
   return (
