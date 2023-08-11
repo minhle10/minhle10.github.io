@@ -28,13 +28,13 @@ import "./styles.css";
 const siteProps = {
   name: "Minh Le",
   title: "Software Engineer and Web Developer",
-  email: "lems@bc.edu",
+  email: "pmle1210@gmail.com",
   gitHub: "minhle10",
-  instagram: "microsoft",
+  instagram: "",
   linkedIn: "minh-p-le",
   medium: "",
-  twitter: "microsoft",
-  youTube: "Code",
+  twitter: "",
+  youTube: "",
 };
 
 const primaryColor = "#4E567E";
