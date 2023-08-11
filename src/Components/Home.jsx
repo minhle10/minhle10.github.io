@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
  * Home background image
  *
  * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
+ * directory and import here for use. Then, set imageAltText to string that
  * represents what you see in that image.
  *
  *
@@ -41,20 +41,30 @@ const Home = ({ name, title }) => {
         <h1>{name}</h1>
         <h2>{title}</h2>
       </div>
-      <motion.div
-        animate={{
-          y: [0, 5, 0],
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          position: "absolute",
+          bottom: "3rem",
         }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          repeatType: "loop",
-        }}
-        style={{ position: "absolute", bottom: "3rem", left: "50%" }}>
-        <a href="#about">
-          <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
-        </a>
-      </motion.div>
+      >
+        <motion.div
+          animate={{
+            y: [0, 5, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <a href="#about">
+            <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
+          </a>
+        </motion.div>
+      </div>
     </section>
   );
 };

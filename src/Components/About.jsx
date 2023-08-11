@@ -80,10 +80,11 @@ const detailOrQuote = (
 );
 
 const About = () => (
-  <section id="about" style={{ backgroundColor: "#e3e7e7" }}>
+  <section id="about" style={{ backgroundColor: "#f0e1d1" }}>
     <div
       style={{
         width: "80%",
+        maxWidth: 1152,
         padding: "3rem 0",
         margin: "0 auto",
         textAlign: "center",
@@ -91,7 +92,7 @@ const About = () => (
       }}
     >
       <motion.div variants={textVariant()}>
-        <h2>About Me</h2>
+        <h2 className="colored">About Me</h2>
       </motion.div>
       <motion.p variants={fadeIn("", "", 0.1, 1)} className="medium">
         {description}

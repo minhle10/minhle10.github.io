@@ -27,18 +27,7 @@ import youTubeIcon from "../images/socials/youtube.svg";
  */
 
 const Footer = (props) => {
-  const {
-    devDotTo,
-    email,
-    gitHub,
-    instagram,
-    linkedIn,
-    medium,
-    name,
-    primaryColor,
-    twitter,
-    youTube,
-  } = props;
+  const { devDotTo, email, gitHub, instagram, linkedIn, medium, name, twitter, youTube } = props;
 
   return (
     <div
@@ -49,7 +38,7 @@ const Footer = (props) => {
         alignItems: "center",
         gap: "2.5rem",
         padding: "5rem 0 3rem",
-        backgroundColor: primaryColor,
+        backgroundColor: "#151619",
         width: "100vw"
       }}
     >
