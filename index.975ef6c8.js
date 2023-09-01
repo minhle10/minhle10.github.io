@@ -47295,7 +47295,7 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","framer-motion":"5bZBB","./../images/example-project.jpg":"kTJp0","./../images/ethgpt.png":"jBeZV","./../images/harikablog.png":"8vgnt","./../images/gardwebapp.png":"67ogG","../utils/motion":"fxZ9a","../hoc":"kLQzj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./../images/cbitesLanding.png":"fQsHh"}],"kTJp0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","framer-motion":"5bZBB","./../images/example-project.jpg":"kTJp0","./../images/ethgpt.png":"jBeZV","./../images/harikablog.png":"8vgnt","./../images/gardwebapp.png":"67ogG","./../images/cbitesLanding.png":"fQsHh","../utils/motion":"fxZ9a","../hoc":"kLQzj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kTJp0":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "example-project.9d6698c6.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"jBeZV":[function(require,module,exports) {
